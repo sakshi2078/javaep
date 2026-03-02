@@ -3,5 +3,6 @@ public class hello{
         System.out.println("Hello World! This is DevOps!");
         System.out.println("Yo wassuppp!");
         System.out.println("Jenkins!");
+        System.out.println("Jenkins works!");
     }
 }

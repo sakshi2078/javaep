@@ -3,6 +3,6 @@ public class hello{
         System.out.println("Hello World! This is DevOps!");
         System.out.println("Jenkins!");
         System.out.println("Poll SCM WORKS!");
-        System.out.println("WebHooks works!");
+        System.out.println("WebHooks works fine!");
     }
 }

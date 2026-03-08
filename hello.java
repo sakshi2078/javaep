@@ -4,5 +4,6 @@ public class hello{
         System.out.println("Jenkins!");
         System.out.println("Poll SCM WORKS!");
         System.out.println("WebHooks works fine!");
+        System.out.println("Pipeline works fine!");
     }
 }

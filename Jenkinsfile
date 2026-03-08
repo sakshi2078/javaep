@@ -1,32 +1,22 @@
 pipeline {
     agent any
 
+    triggers {
+        githubPush()
+        cron('H/5 * * * *')
+    }
+
     stages {
-        stage('Fetch') {
-            steps {
-                echo 'Fetching from repo.....'
-                git "https://github.com/sakshi2078/javaep.git"
-            }
-        }
         stage('Build') {
             steps {
-                echo 'Build the program'
-                bat "javac hello.java"
+                echo 'Building project...'
             }
         }
-        stage('Execute') {
+
+        stage('Test') {
             steps {
-                echo 'Executing.....'
-                bat "java hello"
+                echo 'Running tests...'
             }
         }
-    }
-    post{
-        success{
-                echo "Pipeline built successfully"
-        }    
-        failure{
-                echo "Pipeline failed"
-        } 
     }
 }

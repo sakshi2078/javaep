@@ -2,18 +2,23 @@ pipeline {
     agent any
 
     stages {
-
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                echo 'Building project...'
+                git 'https://github.com/sakshi2078/javaep.git'
             }
         }
 
-        stage('Deploy') {
+        stage('Publish') {
             steps {
-                echo 'Deploying application...'
+                publishHTML([
+                    allowmissing: true,
+                    alwaysLinktoLastBuild: false,
+                    KeepAll: false,
+                    reportDir: '.',
+                    reportFiles: 'index.html',
+                    reportName: 'My HTML Page'
+                ])
             }
         }
-
     }
 }
